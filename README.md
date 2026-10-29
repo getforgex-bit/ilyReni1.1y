@@ -10,6 +10,7 @@ Con Python 3 instalado, ejecutar `python scripts/serve.py` y abrir http://127.0.
 - Lirios de caracteres: adaptados de `send-a-bouquet-main`, Devansh Singhal, MIT. Se conserva la geometría y el render original; se integra un controlador de reproducción independiente del audio.
 - Modelo: objeto `Corazon` del archivo suministrado `Corazon_morado.blend`. `assets/corazon.glb` conserva el material; `corazon.json` contiene la geometría que utiliza el render web sin dependencias. `corazon.png` es la alternativa renderizada desde el mismo archivo.
 - Música: `assets/Neo Romeo.mp3`, audio proporcionado por el usuario. Activada por defecto; inicia en 0:57 al pulsar «Hice algo para ti». Se puede silenciar.
+  El navegador reproduce `assets/Neo Romeo desde 0057.mp3`, una copia recortada físicamente desde 0:57 para garantizar el inicio incluso en servidores sin soporte de búsqueda por rangos. Los eventos mantienen los tiempos de la canción original sumando esos 57 segundos.
 - Fuente Petrona: Google Fonts, SIL Open Font License (licencia en assets).
 
 El botón para continuar aparece en 1:10 de la canción. Si aún no se ha pulsado, la música espera en 1:13,9. Las flores empiezan a crecer en 1:14 y tardan 4,8 segundos en abrirse.
