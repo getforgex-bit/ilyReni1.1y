@@ -9,7 +9,7 @@
   let continueAccepted=false,musicHeld=false,flowersVisible=false,bloomStarted=false,cueFrame=0;
   const wait=ms=>new Promise(resolve=>setTimeout(resolve,reduced?Math.min(ms,180):ms));
   const modelReady=loadHeart3D($('model-heart')).then(value=>model=value).catch(()=>null);
-  drawing.still(0);music.volume=.28;
+  drawing.still(0);music.volume=.40;
   function setState(value,message){state=value;document.body.dataset.scene=value;$('status').textContent=message;}
   function setSound(on){$('sound').setAttribute('aria-pressed',String(on));$('sound').querySelector('span').textContent=on?'Silenciar música':'Activar música';}
   function revealContinue(){
@@ -78,4 +78,5 @@
   $('replay').addEventListener('click',()=>{++soundRun;cancelAnimationFrame(cueFrame);continueAccepted=false;musicHeld=false;flowersVisible=false;bloomStarted=false;music.pause();music.currentTime=0;resume=false;setSound(soundEnabled);});
   $('replay').addEventListener('click',()=>{++run;bouquet.stop();model?.stop();$('flowers').hidden=true;$('ending').hidden=true;$('intro').hidden=false;$('intro').classList.remove('leaving');$('heart-art').classList.remove('morph');$('heart-fallback').hidden=true;$('model-heart').hidden=true;$('continue').hidden=true;$('continue').disabled=false;$('begin').disabled=false;$('heart-caption').innerHTML='Hay sentimientos que toman forma<br>poquito a poquito.';drawing.still(0);setState('intro','Puedes volver a vivir este momento.');$('begin').focus({preventScroll:true});});
 })();
+
 
